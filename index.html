@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            border:2px solid white;
+            width:1000px;
+            margin:auto;
+            margin-top:300px;
+            margin-bottom:300px;
+        }
+    </style>
+</head>
+<body onload="t()" style="background-color: black;">
+    <div class="main">
+    <h1 style="text-align: center;color:white">Clock By KMS</h1>
+    <h2 style="text-align: center;color:rgb(24, 201, 24);font-size:100px;font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;" id="res">Time</h2>
+</div>
+</body>
+<script>
+    function t(){
+      var date=new Date()
+      var h=date.getHours()
+      var min=date.getMinutes()
+      var sec=date.getSeconds()
+      var meridian="am"
+      if(h>12)
+      meridian="pm"
+      h=h-12
+      sec=sec<10?"0"+sec:sec;
+       h=h<10?"0"+h:h;
+      min=min<10?"0"+"min":min;
+
+      var time=h+" : "+min+" : "+sec+" "+meridian
+      document.getElementById("res").innerText=time;
+     setTimeout(t,1000)
+    }
+
+</script>
+</html>
